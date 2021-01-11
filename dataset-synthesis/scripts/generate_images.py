@@ -238,12 +238,11 @@ def setup_compositer():
 	links.new(normalize_node.outputs[0], file_out_node.inputs[0])
 
 
-	# TODO: Still very confused about screenspace normals, worldspace normals, or object normals
 	# normals -> multiply(normals, RGB(0.5, 0.5, -0.5)) -> add(multiply, (0.5, 0.5, 0.5)) -> Invert Red channel -> out
 	combine_node = tree.nodes.new("CompositorNodeCombRGBA")
 	combine_node.inputs[0].default_value = 0.5
 	combine_node.inputs[1].default_value = 0.5
-	combine_node.inputs[2].default_value = -0.5 
+	combine_node.inputs[2].default_value = 0.5 
 	
 	multiply_node = tree.nodes.new("CompositorNodeMixRGB") # multiply(normals, RGB(0.5, 0.5, -0.5))
 	multiply_node.blend_type = "MULTIPLY"
