@@ -1,0 +1,7 @@
+{
+	"num_lights": 60,
+	"num_cameras": 60,
+    "num_objects": 12000,
+	"random_seed": 2952,
+	"lightstage_radius": 9
+}
